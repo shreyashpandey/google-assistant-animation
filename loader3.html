@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta charset="utf-8">
+<title>Loader 3</title>
+<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>  
+<style>
+/*#main{
+	border-radius:50%;background:blue;
+	height:100px;
+	width:100px;
+	position:absolute;
+} */
+</style>
+</head>
+<body>
+<!--<p>Hello</p>-->
+<!--style="transform:rotate(45deg);transition:10s;position:absolute;top:100px;"-->
+<div id="main" >
+<div id="a" style="border-radius:50%;background:blue;
+	height:75px;
+	width:75px;
+	position:absolute;z-index:2;top:200px;"></div>
+<div id="b" style="border-radius:50%;background:orange;
+	height:42px;
+	width:42px;left:90px;top:290px;
+	position:absolute;"></div>
+<div id="c" style="border-radius:50%;background:red;
+	height:35px;
+	width:35px;
+	position:absolute;left:95px;top:245px;"></div>
+<div id="d" style="border-radius:50%;background:green;
+	height:16px;
+	width:16px;
+	position:absolute;left:125px;top:227px;"></div>
+	<!--<button style="position:absolute;top:250px;">Start</button>-->
+</div>
+<script>
+//$(function(){});
+$(document).ready(function()
+{
+//$("p").text("Hello!!");
+$("#b").fadeOut(2000);	
+//$("#b").animate({opacity:'0'});
+$("#c").fadeOut(2000);
+$("#d").fadeOut(2000);
+$("#a").animate({width:'150px',height:'150px'},3000);
+$("#a").animate({left:'575px'},1500);
+//$("#a").animate({width:'75px',height:'75px'},1000);
+//$("#a").animate({opacity:'0'},25);
+$("#b").animate({left:'650px'},50);
+$("#c").animate({left:'650px'},50);
+$("#d").animate({left:'700px'},50);
+$("#b").fadeIn(7500);	
+//$("#b").animate({opacity:'1'},7050);
+$("#c").fadeIn(7500);
+$("#d").fadeIn(7500);
+/*$("#a").stop();
+$("#b").stop();
+$("#c").stop();
+$("#d").stop();*/
+//$("#main").animate({transform:'rotate(180deg)'},7600);
+$("#a").animate({backgroundColor:"green"},740);
+$("#a").animate({backgroundColor:"#ff0000"},740);
+$("#a").animate({backgroundColor:"#ffa500"},740);
+$("#a").animate({backgroundColor:"#0000ff"},740);
+/*$( "#main" ).effect({  
+                  effect: "explode",  
+                  easing: "easeInExpo",  
+                  pieces: 16,  
+                  duration: 5000  
+               });  */
+  $( "#main" ).delay(7500).effect( "bounce", {  
+                  times: 10,  
+                  distance: 200  ,duration:6000
+               }, 6000);
+               $("#a").delay(500).animate({height:'75px',width:'75px'},500);
+               $("#a").delay(6500).animate({height:'35px',width:'35px'});
+               $("#b").delay(5500).animate({height:'75px',width:'75px'});//stop function is used to multiple ellemnts at the same time....
+               $("#b").delay(500).animate({height:'35px',width:'35px'});
+               $("#c").delay(7000).animate({height:'75px',width:'75px'});
+               $("#c").delay(500).animate({height:'30px',width:'30px'});
+               $("#d").delay(7600).animate({height:'75px',width:'75px'});
+               $("#d").delay(600).animate({height:'15px',width:'15px'});
+               $("#a").delay(3000).animate({height:'75px',width:'75px'});
+               $("#a").delay(500).animate({height:'10px',width:'10px',top:'200px',left:'500px'});
+               $("#b").delay(500).animate({height:'10px',width:'10px',top:'200px',left:'520px'});
+               $("#c").delay(500).animate({height:'10px',width:'10px',top:'200px',left:'540px'});
+               $("#d").delay(500).animate({height:'10px',width:'10px',top:'200px',left:'560px'});
+               //$("#a").delay(500).animate({height:'75px',width:'75px'},500);
+               $("#a").delay(100).animate({top:'75px'});
+               $("#a").delay(100).animate({top:'200px'});
+               $("#b").delay(1500).animate({top:'75px'},250);
+               $("#b").delay(1500).animate({top:'200px'},250);
+               $("#c").delay(1000).animate({top:'75px'});
+               $("#c").delay(1000).animate({top:'200px'});
+               $("#d").delay(700).animate({top:'75px'});
+               $("#d").delay(700).animate({top:'200px'});
+
+              /* $( "#b" ).delay(10000).effect( "bounce", {  
+                  times: 5  
+                  distance: 70  ,duration:6000
+               }, 2000);
+               $( "#c" ).delay(10500).effect( "bounce", {  
+                  times: 5  
+                  distance: 70  ,duration:6000
+               }, 2000);
+               $( "#d" ).delay(11000).effect( "bounce", {  
+                  times: 5  
+                  distance: 70  ,duration:6000
+               }, 2000);*/
+               
+              // $("#b").delay(5500).animate({height:'75px',width:'75px'});
+
+            //, function() {  
+              // $( this ).css({'transform': 'rotate('+40+'deg)'},10000);    
+/*$("#main").css({'transform': 'rotate('+30+'deg)'});
+$("#main").animate({'transform':'rotate('+30+'deg)'},1000);can be used in a different manner*/
+/*$(document).ready(function () { 
+    DoRotate(30);
+    AnimateRotate(30);
+});
+
+function DoRotate(d) {
+
+    $("#MyDiv1").css({
+          '-moz-transform':'rotate('+d+'deg)',
+          '-webkit-transform':'rotate('+d+'deg)',
+          '-o-transform':'rotate('+d+'deg)',
+          '-ms-transform':'rotate('+d+'deg)',
+          'transform': 'rotate('+d+'deg)'
+     });  
+}
+
+function AnimateRotate(d) {
+
+        $("#MyDiv2").animate({
+          '-moz-transform':'rotate('+d+'deg)',
+          '-webkit-transform':'rotate('+d+'deg)',
+          '-o-transform':'rotate('+d+'deg)',
+          '-ms-transform':'rotate('+d+'deg)',
+          'transform':'rotate('+d+'deg)'
+     }, 1000); 
+}*/});
+</script>
+<!--<script>
+$(document).ready(function(){
+$( "#a" ).delay(10000).effect( "shake", {  
+                  times: 5  
+                  distance: 70 
+               }, 2000);	
+});
+</script>-->
+<!--<script>
+t();
+function t()
+{
+window.setTimeout(function() { document.getElementById("a").style="background:orange;"; },8100);
+}
+</script>-->
+</body>
+</html>
